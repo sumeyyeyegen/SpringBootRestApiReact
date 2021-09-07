@@ -1,0 +1,19 @@
+{
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "id": false,
+      "otherEntityRelationshipName": "student"
+    }
+  ],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "pagination",
+  "name": "Student",
+  "changelogDate": "20210907165230"
+}

@@ -1,0 +1,16 @@
+{
+  "introApp": {
+    "student": {
+      "home": {
+        "title": "Students",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Students found"
+      },
+      "detail": {
+        "title": "Student"
+      },
+      "id": "ID",
+      "user": "User"
+    }
+  }
+}
