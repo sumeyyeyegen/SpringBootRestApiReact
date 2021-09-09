@@ -98,14 +98,8 @@ export const ExamResult = (props: RouteComponentProps<{ url: string }>) => {
                 <th className="hand" onClick={sort('id')}>
                   <Translate contentKey="introApp.examResult.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th className="hand" onClick={sort('student_id')}>
-                  <Translate contentKey="introApp.examResult.student_id">Student Id</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th className="hand" onClick={sort('score')}>
                   <Translate contentKey="introApp.examResult.score">Score</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
-                <th className="hand" onClick={sort('course_id')}>
-                  <Translate contentKey="introApp.examResult.course_id">Course Id</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
                   <Translate contentKey="introApp.examResult.student">Student</Translate> <FontAwesomeIcon icon="sort" />
@@ -124,11 +118,9 @@ export const ExamResult = (props: RouteComponentProps<{ url: string }>) => {
                       {examResult.id}
                     </Button>
                   </td>
-                  <td>{examResult.student_id}</td>
                   <td>{examResult.score}</td>
-                  <td>{examResult.course_id}</td>
-                  <td>{examResult.student ? <Link to={`student/${examResult.student.id}`}>{examResult.student.id}</Link> : ''}</td>
-                  <td>{examResult.course ? <Link to={`course/${examResult.course.id}`}>{examResult.course.id}</Link> : ''}</td>
+                  <td>{examResult.student ? <Link to={`student/${examResult.student.id}`}>{examResult.student.full_name}</Link> : ''}</td>
+                  <td>{examResult.course ? <Link to={`course/${examResult.course.id}`}>{examResult.course.name}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${examResult.id}`} color="info" size="sm" data-cy="entityDetailsButton">
