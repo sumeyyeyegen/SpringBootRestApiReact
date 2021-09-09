@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { getSortState, JhiItemCount, JhiPagination, Translate } from 'react-jhipster';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Table } from 'reactstrap';
-import { useAppDispatch, useAppSelector } from '../config/store';
-import { getEntities } from '../entities/student/student.reducer';
-import { overridePaginationStateWithQueryParams } from '../shared/util/entity-utils';
-import { ASC, DESC, ITEMS_PER_PAGE, SORT } from '../shared/util/pagination.constants';
+import { useAppDispatch, useAppSelector } from '../../config/store';
+import { getEntities } from '../../entities/student/student.reducer';
+import { overridePaginationStateWithQueryParams } from '../../shared/util/entity-utils';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from '../../shared/util/pagination.constants';
 
 function AllInfo(props: RouteComponentProps<{ url: string }>) {
   const dispatch = useAppDispatch();
@@ -101,6 +101,7 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
                 <th>
                   <h6>Kurs Puanı</h6>
                 </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
