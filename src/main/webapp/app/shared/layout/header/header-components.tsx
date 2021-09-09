@@ -5,7 +5,7 @@ import { NavItem, NavLink, NavbarBrand } from 'reactstrap';
 import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import appConfig from 'app/config/constants';
+import appConfig from '../../../../app/config/constants';
 
 export const BrandIcon = props => (
   <div {...props} className="brand-icon">

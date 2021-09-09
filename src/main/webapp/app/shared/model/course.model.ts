@@ -1,4 +1,4 @@
-import { IStudent } from 'app/shared/model/student.model';
+import { IStudent } from '../../../app/shared/model/student.model';
 
 export interface ICourse {
   id?: number;

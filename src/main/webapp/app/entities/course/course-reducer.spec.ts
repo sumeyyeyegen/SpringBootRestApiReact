@@ -5,8 +5,8 @@ import thunk from 'redux-thunk';
 import sinon from 'sinon';
 
 import reducer, { getEntities, getEntity, reset } from './course.reducer';
-import { EntityState } from 'app/shared/reducers/reducer.utils';
-import { ICourse, defaultValue } from 'app/shared/model/course.model';
+import { EntityState } from '../../../app/shared/reducers/reducer.utils';
+import { ICourse, defaultValue } from '../../../app/shared/model/course.model';
 
 describe('Entities reducer tests', () => {
   function isEmpty(element): boolean {

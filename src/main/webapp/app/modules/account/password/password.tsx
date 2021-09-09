@@ -3,9 +3,9 @@ import { Translate, translate, ValidatedField, ValidatedForm } from 'react-jhips
 import { Row, Col, Button } from 'reactstrap';
 import { toast } from 'react-toastify';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
-import { getSession } from 'app/shared/reducers/authentication';
-import PasswordStrengthBar from 'app/shared/layout/password/password-strength-bar';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
+import { getSession } from '../../../../app/shared/reducers/authentication';
+import PasswordStrengthBar from '../../../../app/shared/layout/password/password-strength-bar';
 import { savePassword, reset } from './password.reducer';
 
 export const PasswordPage = () => {

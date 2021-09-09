@@ -3,8 +3,8 @@ import { Storage } from 'react-jhipster';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { serializeAxiosError } from './reducer.utils';
 
-import { AppThunk } from 'app/config/store';
-import { setLocale } from 'app/shared/reducers/locale';
+import { AppThunk } from '../../../app/config/store';
+import { setLocale } from '../../../app/shared/reducers/locale';
 
 const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 

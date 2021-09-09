@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
+import ErrorBoundaryRoute from '../../../app/shared/error/error-boundary-route';
 
 import ExamResult from './exam-result';
 import ExamResultDetail from './exam-result-detail';

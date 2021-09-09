@@ -5,8 +5,8 @@ import { RouteComponentProps } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { handlePasswordResetFinish, reset } from '../password-reset.reducer';
-import PasswordStrengthBar from 'app/shared/layout/password/password-strength-bar';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import PasswordStrengthBar from '../../../../../app/shared/layout/password/password-strength-bar';
+import { useAppDispatch, useAppSelector } from '../../../../../app/config/store';
 
 export const PasswordResetFinishPage = (props: RouteComponentProps<{ key: string }>) => {
   const [password, setPassword] = useState('');
@@ -26,7 +26,7 @@ export const PasswordResetFinishPage = (props: RouteComponentProps<{ key: string
 
   const getResetForm = () => {
     return (
-      <ValidatedForm onSubmit={handleValidSubmit}>
+      <ValidatedForm onSubmit={handleValidSubmit} >
         <ValidatedField
           name="newPassword"
           label={translate('global.form.newpassword.label')}

@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ErrorBoundary from 'app/shared/error/error-boundary';
+import ErrorBoundary from '../../../app/shared/error/error-boundary';
 
 const ErrorComp = () => {
   throw new Error('test');

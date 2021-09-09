@@ -4,11 +4,11 @@ import { Button, Table, Row, Badge } from 'reactstrap';
 import { Translate, TextFormat, JhiPagination, JhiItemCount, getSortState } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { APP_DATE_FORMAT } from 'app/config/constants';
-import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
-import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
+import { APP_DATE_FORMAT } from '../../../../app/config/constants';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from '../../../../app/shared/util/pagination.constants';
+import { overridePaginationStateWithQueryParams } from '../../../../app/shared/util/entity-utils';
 import { getUsersAsAdmin, updateUser } from './user-management.reducer';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 
 export const UserManagement = (props: RouteComponentProps<any>) => {
   const dispatch = useAppDispatch();

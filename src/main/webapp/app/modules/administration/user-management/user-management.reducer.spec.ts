@@ -13,8 +13,8 @@ import userManagement, {
   deleteUser,
   reset,
 } from './user-management.reducer';
-import { defaultValue } from 'app/shared/model/user.model';
-import { AUTHORITIES } from 'app/config/constants';
+import { defaultValue } from '../../../../app/shared/model/user.model';
+import { AUTHORITIES } from '../../../../app/config/constants';
 
 describe('User management reducer tests', () => {
   const username = process.env.E2E_USERNAME ?? 'admin';

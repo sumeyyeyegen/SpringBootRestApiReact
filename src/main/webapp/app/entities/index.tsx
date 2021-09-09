@@ -2,11 +2,12 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
+import ErrorBoundaryRoute from '../../app/shared/error/error-boundary-route';
 
 import Student from './student';
 import Course from './course';
 import ExamResult from './exam-result';
+import AllInfo from '../pages/AllInfo';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -16,6 +17,7 @@ const Routes = ({ match }) => (
       <ErrorBoundaryRoute path={`${match.url}student`} component={Student} />
       <ErrorBoundaryRoute path={`${match.url}course`} component={Course} />
       <ErrorBoundaryRoute path={`${match.url}exam-result`} component={ExamResult} />
+      <ErrorBoundaryRoute path={`${match.url}all-info`} component={AllInfo} />
       {/* jhipster-needle-add-route-path - JHipster will add routes here */}
     </Switch>
   </div>

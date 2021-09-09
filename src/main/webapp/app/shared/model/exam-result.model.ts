@@ -1,5 +1,5 @@
-import { IStudent } from 'app/shared/model/student.model';
-import { ICourse } from 'app/shared/model/course.model';
+import { IStudent } from '../../../app/shared/model/student.model';
+import { ICourse } from '../../../app/shared/model/course.model';
 
 export interface IExamResult {
   id?: number;

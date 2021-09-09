@@ -4,10 +4,10 @@ import { Button, Row, Badge } from 'reactstrap';
 import { Translate, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { APP_DATE_FORMAT } from 'app/config/constants';
-import { languages } from 'app/config/translation';
+import { APP_DATE_FORMAT } from '../../../../app/config/constants';
+import { languages } from '../../../../app/config/translation';
 import { getUser } from './user-management.reducer';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 
 export const UserManagementDetail = (props: RouteComponentProps<{ login: string }>) => {
   const dispatch = useAppDispatch();

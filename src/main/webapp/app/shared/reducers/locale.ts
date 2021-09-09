@@ -2,7 +2,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { AppThunk } from 'app/config/store';
+import { AppThunk } from '../../../app/config/store';
 import { TranslatorContext } from 'react-jhipster';
 
 const initialState = {

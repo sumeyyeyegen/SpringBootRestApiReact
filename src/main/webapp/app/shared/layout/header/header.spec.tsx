@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import initStore from 'app/config/store';
+import initStore from '../../../../app/config/store';
 import Header from './header';
 
 describe('Header', () => {

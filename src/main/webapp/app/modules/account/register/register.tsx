@@ -3,8 +3,8 @@ import { Translate, translate, ValidatedField, ValidatedForm, isEmail } from 're
 import { Row, Col, Alert, Button } from 'reactstrap';
 import { toast } from 'react-toastify';
 
-import PasswordStrengthBar from 'app/shared/layout/password/password-strength-bar';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import PasswordStrengthBar from '../../../../app/shared/layout/password/password-strength-bar';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 import { handleRegister, reset } from './register.reducer';
 
 export const RegisterPage = () => {

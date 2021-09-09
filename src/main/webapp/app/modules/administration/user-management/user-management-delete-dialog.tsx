@@ -5,7 +5,7 @@ import { Translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { getUser, deleteUser } from './user-management.reducer';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 
 export const UserManagementDeleteDialog = (props: RouteComponentProps<{ login: string }>) => {
   const dispatch = useAppDispatch();

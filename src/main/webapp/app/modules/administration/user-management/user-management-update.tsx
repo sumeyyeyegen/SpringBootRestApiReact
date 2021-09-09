@@ -4,9 +4,9 @@ import { Button, Row, Col, FormText } from 'reactstrap';
 import { Translate, translate, ValidatedField, ValidatedForm, isEmail } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { locales, languages } from 'app/config/translation';
+import { locales, languages } from '../../../../app/config/translation';
 import { getUser, getRoles, updateUser, createUser, reset } from './user-management.reducer';
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 
 export const UserManagementUpdate = (props: RouteComponentProps<{ login: string }>) => {
   const [isNew] = useState(!props.match.params || !props.match.params.login);

@@ -1,6 +1,6 @@
 import { translate } from 'react-jhipster';
 import { toast } from 'react-toastify';
-import { isFulfilledAction, isRejectedAction } from 'app/shared/reducers/reducer.utils';
+import { isFulfilledAction, isRejectedAction } from '../../app/shared/reducers/reducer.utils';
 
 const addErrorAlert = (message, key?, data?) => {
   key = key ? key : message;

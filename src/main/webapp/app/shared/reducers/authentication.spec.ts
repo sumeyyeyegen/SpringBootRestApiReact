@@ -19,8 +19,8 @@ import authentication, {
   authError,
   clearAuth,
   initialState,
-} from 'app/shared/reducers/authentication';
-import { updateLocale } from 'app/shared/reducers/locale';
+} from '../../../app/shared/reducers/authentication';
+import { updateLocale } from '../../../app/shared/reducers/locale';
 
 describe('Authentication reducer tests', () => {
   function isAccountEmpty(state): boolean {

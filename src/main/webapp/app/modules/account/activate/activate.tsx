@@ -3,7 +3,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { Row, Col, Alert } from 'reactstrap';
 import { Translate, getUrlParameter } from 'react-jhipster';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppDispatch, useAppSelector } from '../../../../app/config/store';
 import { activateAction, reset } from './activate.reducer';
 
 const successAlert = (
