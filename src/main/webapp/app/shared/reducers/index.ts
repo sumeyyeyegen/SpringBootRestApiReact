@@ -13,6 +13,10 @@ import settings, { SettingsState } from 'app/modules/account/settings/settings.r
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
 // prettier-ignore
 import student from 'app/entities/student/student.reducer';
+// prettier-ignore
+import course from 'app/entities/course/course.reducer';
+// prettier-ignore
+import examResult from 'app/entities/exam-result/exam-result.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -27,6 +31,8 @@ const rootReducer = {
   password,
   settings,
   student,
+  course,
+  examResult,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };

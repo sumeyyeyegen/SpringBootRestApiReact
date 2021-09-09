@@ -1,0 +1,20 @@
+{
+  "introApp": {
+    "examResult": {
+      "home": {
+        "title": "Exam Results",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Exam Results found"
+      },
+      "detail": {
+        "title": "Exam Result"
+      },
+      "id": "ID",
+      "student_id": "Student Id",
+      "score": "Score",
+      "course_id": "Course Id",
+      "student": "Student",
+      "course": "Course"
+    }
+  }
+}

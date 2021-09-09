@@ -8,6 +8,8 @@
       "entities": {
         "main": "Varlıklar",
         "student": "Student",
+        "course": "Course",
+        "examResult": "Exam Result",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

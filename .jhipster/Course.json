@@ -1,0 +1,23 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "student",
+      "otherEntityName": "student",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "course"
+    }
+  ],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "pagination",
+  "name": "Course",
+  "changelogDate": "20210908110132"
+}

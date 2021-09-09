@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "fieldName": "student_id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "score",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "course_id",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "student",
+      "otherEntityName": "student",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "id": false,
+      "otherEntityRelationshipName": "examResult"
+    },
+    {
+      "relationshipName": "course",
+      "otherEntityName": "course",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "id": false,
+      "otherEntityRelationshipName": "examResult"
+    }
+  ],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "pagination",
+  "name": "ExamResult",
+  "changelogDate": "20210909075244"
+}

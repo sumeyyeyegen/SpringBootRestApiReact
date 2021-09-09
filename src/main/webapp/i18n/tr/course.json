@@ -1,0 +1,17 @@
+{
+  "introApp": {
+    "course": {
+      "home": {
+        "title": "Courses",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Courses found"
+      },
+      "detail": {
+        "title": "Course"
+      },
+      "id": "ID",
+      "name": "Name",
+      "student": "Student"
+    }
+  }
+}
