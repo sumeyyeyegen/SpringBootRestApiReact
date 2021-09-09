@@ -78,8 +78,8 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
 
   return (
     <div>
-      <h2 id="exam-result-heading" data-cy="ExamResultHeading">
-        <Translate contentKey="introApp.examResult.home.title">Exam Results</Translate>
+      <h2 id="info-heading" data-cy="InfoHeading">
+        <h2>Info</h2>
         <div className="d-flex justify-content-end">
           <Button className="mr-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
@@ -114,7 +114,7 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
                   </td> */}
                   <td>{examResult.student? <Link to={`student/${examResult.student.id}`}>{examResult.student.full_name}</Link> : ''}</td>
                   <td>{examResult.course ? <Link to={`course/${examResult.course.id}`}>{examResult.course.name}</Link> : ''}</td>
-                  <td>{examResult.score? <Link to={`course/${examResult.id}`}>{examResult.score}</Link> : ''}</td>
+                  <td>{examResult.score? <Link to={`exam-result/${examResult.id}`}>{examResult.score}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${examResult.id}`} color="info" size="sm" data-cy="entityDetailsButton">
