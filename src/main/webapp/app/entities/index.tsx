@@ -7,7 +7,7 @@ import ErrorBoundaryRoute from '../../app/shared/error/error-boundary-route';
 import Student from './student';
 import Course from './course';
 import ExamResult from './exam-result';
-import AllInfo from '../pages/AllInfo';
+import AllInfo from '../pages/info/Info';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (

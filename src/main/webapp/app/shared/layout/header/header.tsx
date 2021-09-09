@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import { Translate, Storage } from 'react-jhipster';
 import { Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
 import LoadingBar from 'react-redux-loading-bar';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Home, Brand } from './header-components';
 import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
 import { useAppDispatch } from '../../../../app/config/store';
 import { setLocale } from '../../../../app/shared/reducers/locale';
+import AllInfo from '../../../pages/info/Info';
+import { Link } from 'react-router-dom';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
