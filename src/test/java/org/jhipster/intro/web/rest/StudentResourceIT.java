@@ -29,6 +29,18 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class StudentResourceIT {
 
+    private static final Integer DEFAULT_NUMBER = 1;
+    private static final Integer UPDATED_NUMBER = 2;
+
+    private static final String DEFAULT_GSM_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_GSM_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FULL_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_FULL_NAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/students";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -53,7 +65,11 @@ class StudentResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Student createEntity(EntityManager em) {
-        Student student = new Student();
+        Student student = new Student()
+            .number(DEFAULT_NUMBER)
+            .gsm_number(DEFAULT_GSM_NUMBER)
+            .full_name(DEFAULT_FULL_NAME)
+            .email(DEFAULT_EMAIL);
         return student;
     }
 
@@ -64,7 +80,11 @@ class StudentResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Student createUpdatedEntity(EntityManager em) {
-        Student student = new Student();
+        Student student = new Student()
+            .number(UPDATED_NUMBER)
+            .gsm_number(UPDATED_GSM_NUMBER)
+            .full_name(UPDATED_FULL_NAME)
+            .email(UPDATED_EMAIL);
         return student;
     }
 
@@ -84,7 +104,11 @@ class StudentResourceIT {
             .perform(get(ENTITY_API_URL + "?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(student.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(student.getId().intValue())))
+            .andExpect(jsonPath("$.[*].number").value(hasItem(DEFAULT_NUMBER)))
+            .andExpect(jsonPath("$.[*].gsm_number").value(hasItem(DEFAULT_GSM_NUMBER)))
+            .andExpect(jsonPath("$.[*].full_name").value(hasItem(DEFAULT_FULL_NAME)))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)));
     }
 
     @Test
@@ -98,7 +122,11 @@ class StudentResourceIT {
             .perform(get(ENTITY_API_URL_ID, student.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.id").value(student.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(student.getId().intValue()))
+            .andExpect(jsonPath("$.number").value(DEFAULT_NUMBER))
+            .andExpect(jsonPath("$.gsm_number").value(DEFAULT_GSM_NUMBER))
+            .andExpect(jsonPath("$.full_name").value(DEFAULT_FULL_NAME))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL));
     }
 
     @Test

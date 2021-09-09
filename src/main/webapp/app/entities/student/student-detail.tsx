@@ -30,9 +30,29 @@ export const StudentDetail = (props: RouteComponentProps<{ id: string }>) => {
           </dt>
           <dd>{studentEntity.id}</dd>
           <dt>
-            <Translate contentKey="introApp.student.user">User</Translate>
+            <span id="number">
+              <Translate contentKey="introApp.student.number">Number</Translate>
+            </span>
           </dt>
-          <dd>{studentEntity.user ? studentEntity.user.login : ''}</dd>
+          <dd>{studentEntity.number}</dd>
+          <dt>
+            <span id="gsm_number">
+              <Translate contentKey="introApp.student.gsm_number">Gsm Number</Translate>
+            </span>
+          </dt>
+          <dd>{studentEntity.gsm_number}</dd>
+          <dt>
+            <span id="full_name">
+              <Translate contentKey="introApp.student.full_name">Full Name</Translate>
+            </span>
+          </dt>
+          <dd>{studentEntity.full_name}</dd>
+          <dt>
+            <span id="email">
+              <Translate contentKey="introApp.student.email">Email</Translate>
+            </span>
+          </dt>
+          <dd>{studentEntity.email}</dd>
         </dl>
         <Button tag={Link} to="/student" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

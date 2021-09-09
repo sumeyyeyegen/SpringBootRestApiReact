@@ -10,7 +10,10 @@
         "title": "Student"
       },
       "id": "ID",
-      "user": "User"
+      "number": "Number",
+      "gsm_number": "Gsm Number",
+      "full_name": "Full Name",
+      "email": "Email"
     }
   }
 }

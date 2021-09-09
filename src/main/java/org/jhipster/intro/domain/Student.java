@@ -20,9 +20,17 @@ public class Student implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private User user;
+    @Column(name = "number")
+    private Integer number;
+
+    @Column(name = "gsm_number")
+    private String gsm_number;
+
+    @Column(name = "full_name")
+    private String full_name;
+
+    @Column(name = "email")
+    private String email;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -38,17 +46,56 @@ public class Student implements Serializable {
         return this;
     }
 
-    public User getUser() {
-        return this.user;
+    public Integer getNumber() {
+        return this.number;
     }
 
-    public Student user(User user) {
-        this.setUser(user);
+    public Student number(Integer number) {
+        this.number = number;
         return this;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getGsm_number() {
+        return this.gsm_number;
+    }
+
+    public Student gsm_number(String gsm_number) {
+        this.gsm_number = gsm_number;
+        return this;
+    }
+
+    public void setGsm_number(String gsm_number) {
+        this.gsm_number = gsm_number;
+    }
+
+    public String getFull_name() {
+        return this.full_name;
+    }
+
+    public Student full_name(String full_name) {
+        this.full_name = full_name;
+        return this;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public Student email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -75,6 +122,10 @@ public class Student implements Serializable {
     public String toString() {
         return "Student{" +
             "id=" + getId() +
+            ", number=" + getNumber() +
+            ", gsm_number='" + getGsm_number() + "'" +
+            ", full_name='" + getFull_name() + "'" +
+            ", email='" + getEmail() + "'" +
             "}";
     }
 }

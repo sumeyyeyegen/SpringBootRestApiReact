@@ -98,8 +98,17 @@ export const Student = (props: RouteComponentProps<{ url: string }>) => {
                 <th className="hand" onClick={sort('id')}>
                   <Translate contentKey="introApp.student.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th>
-                  <Translate contentKey="introApp.student.user">User</Translate> <FontAwesomeIcon icon="sort" />
+                <th className="hand" onClick={sort('number')}>
+                  <Translate contentKey="introApp.student.number">Number</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('gsm_number')}>
+                  <Translate contentKey="introApp.student.gsm_number">Gsm Number</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('full_name')}>
+                  <Translate contentKey="introApp.student.full_name">Full Name</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('email')}>
+                  <Translate contentKey="introApp.student.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -112,7 +121,10 @@ export const Student = (props: RouteComponentProps<{ url: string }>) => {
                       {student.id}
                     </Button>
                   </td>
-                  <td>{student.user ? student.user.login : ''}</td>
+                  <td>{student.number}</td>
+                  <td>{student.gsm_number}</td>
+                  <td>{student.full_name}</td>
+                  <td>{student.email}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${student.id}`} color="info" size="sm" data-cy="entityDetailsButton">
