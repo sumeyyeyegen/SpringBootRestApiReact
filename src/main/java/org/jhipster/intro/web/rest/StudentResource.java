@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Optional;
 import org.jhipster.intro.domain.Student;
 import org.jhipster.intro.repository.StudentRepository;
+import org.jhipster.intro.service.StudentService;
 import org.jhipster.intro.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,9 +35,11 @@ public class StudentResource {
     private final Logger log = LoggerFactory.getLogger(StudentResource.class);
 
     private final StudentRepository studentRepository;
+    private final StudentService studentService;
 
-    public StudentResource(StudentRepository studentRepository) {
+    public StudentResource(StudentRepository studentRepository,StudentService studentService) {
         this.studentRepository = studentRepository;
+        this.studentService=studentService;
     }
 
     /**
@@ -51,6 +54,12 @@ public class StudentResource {
         Page<Student> page = studentRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    @PostMapping("/students/add")
+    public boolean add(Student student) {
+    	boolean res = studentService.add(student);
+        return res;
     }
 
     /**
