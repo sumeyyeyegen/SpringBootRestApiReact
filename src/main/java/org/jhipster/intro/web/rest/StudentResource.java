@@ -35,43 +35,37 @@ public class StudentResource {
     private final Logger log = LoggerFactory.getLogger(StudentResource.class);
 
     private final StudentRepository studentRepository;
+    //StudentService entegre edildi. Api'den doğruca Repository'e ulaşmak yerine
+    //Business katmanı olarak StudentService eklendi. 
+    //TODO: Service kısmında tanımlanan fonskiyonları interface'e ekleyip oradan override işlemi gerçekleştirilebilir.
+    //DRY
     private final StudentService studentService;
 
+    
     public StudentResource(StudentRepository studentRepository,StudentService studentService) {
         this.studentRepository = studentRepository;
         this.studentService=studentService;
     }
-
-    /**
-     * {@code GET  /students} : get all the students.
-     *
-     * @param pageable the pagination information.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of students in body.
-     */
+    
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents(Pageable pageable) {
         log.debug("REST request to get a page of Students");
-        Page<Student> page = studentRepository.findAll(pageable);
+        Page<Student> page = studentService.getAllStudents(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
     
     @PostMapping("/students/add")
     public boolean add(Student student) {
+    	//service kısmında oluşturulan add fonksiyonu.
     	boolean res = studentService.add(student);
         return res;
     }
 
-    /**
-     * {@code GET  /students/:id} : get the "id" student.
-     *
-     * @param id the id of the student to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the student, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/students/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {
         log.debug("REST request to get Student : {}", id);
-        Optional<Student> student = studentRepository.findById(id);
+        Optional<Student> student = studentService.getStudent(id);
         return ResponseUtil.wrapOrNotFound(student);
     }
 }
