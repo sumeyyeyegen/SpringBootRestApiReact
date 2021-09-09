@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ExamResultRepository extends JpaRepository<ExamResult, Long> {}
+public interface ExamResultRepository extends JpaRepository<ExamResult, Long> {
+	
+}
