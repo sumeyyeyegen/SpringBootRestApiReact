@@ -1,5 +1,6 @@
 package org.jhipster.intro.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -21,14 +22,14 @@ public class ExamResult implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "STUDENT_ID", insertable = false, updatable = false)
-    private Long student_id;
+//    @Column(name = "STUDENT_ID", insertable = false, updatable = false)
+//    private Long student_id;
 
     @Column(name = "score")
     private Integer score;
-
-    @Column(name = "COURSE_ID", insertable = false, updatable = false)
-    private Long course_id;
+//
+//    @Column(name = "COURSE_ID", insertable = false, updatable = false)
+//    private Long course_id;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -53,18 +54,18 @@ public class ExamResult implements Serializable {
         return this;
     }
 
-    public Long getStudent_id() {
-        return this.student_id;
-    }
-
-    public ExamResult student_id(Long student_id) {
-        this.student_id = student_id;
-        return this;
-    }
-
-    public void setStudent_id(Long student_id) {
-        this.student_id = student_id;
-    }
+//    public Long getStudent_id() {
+//        return this.student_id;
+//    }
+//
+//    public ExamResult student_id(Long student_id) {
+//        this.student_id = student_id;
+//        return this;
+//    }
+//
+//    public void setStudent_id(Long student_id) {
+//        this.student_id = student_id;
+//    }
 
     public Integer getScore() {
         return this.score;
@@ -79,18 +80,18 @@ public class ExamResult implements Serializable {
         this.score = score;
     }
 
-    public Long getCourse_id() {
-        return this.course_id;
-    }
-
-    public ExamResult course_id(Long course_id) {
-        this.course_id = course_id;
-        return this;
-    }
-
-    public void setCourse_id(Long course_id) {
-        this.course_id = course_id;
-    }
+//    public Long getCourse_id() {
+//        return this.course_id;
+//    }
+//
+//    public ExamResult course_id(Long course_id) {
+//        this.course_id = course_id;
+//        return this;
+//    }
+//
+//    public void setCourse_id(Long course_id) {
+//        this.course_id = course_id;
+//    }
 
     public Student getStudent() {
         return this.student;
@@ -142,9 +143,9 @@ public class ExamResult implements Serializable {
     public String toString() {
         return "ExamResult{" +
             "id=" + getId() +
-            ", student_id=" + getStudent_id() +
+//            ", student_id=" + getStudent_id() +
             ", score=" + getScore() +
-            ", course_id=" + getCourse_id() +
+//            ", course_id=" + getCourse_id() +
             "}";
     }
 }
