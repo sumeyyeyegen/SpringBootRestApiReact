@@ -20,7 +20,7 @@ export const Student = (props: RouteComponentProps<{ url: string }>) => {
 
   const studentList = useAppSelector(state => state.student.entities);
   const loading = useAppSelector(state => state.student.loading);
-  const totalItems = useAppSelector(state => state.student.entities);
+  const totalItems = useAppSelector(state => state.student.entities.length);
 
   const getAllEntities = () => {
     dispatch(

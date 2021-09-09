@@ -15,14 +15,9 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
     overridePaginationStateWithQueryParams(getSortState(props.location, ITEMS_PER_PAGE, 'id'), props.location.search)
   );
 
-  const studentList = useAppSelector(state => state.student.entities);
   const examResultList = useAppSelector(state => state.examResult.entities);
-  const courseList = useAppSelector(state => state.course.entities);
-  const loading = useAppSelector(state => state.student.loading);
-  const totalItems = useAppSelector(state => state.student.totalItems);
-
-  
-  
+  const loading = useAppSelector(state => state.examResult.loading);
+  const totalItems = useAppSelector(state => state.examResult.totalItems);
 
   const getAllEntities = () => {
     dispatch(
@@ -80,48 +75,48 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
   };
 
   const { match } = props;
+
   return (
     <div>
-      <h2 id="student-heading" data-cy="StudentHeading">
-        <Translate contentKey="introApp.student.home.title">Students</Translate>
+      <h2 id="exam-result-heading" data-cy="ExamResultHeading">
+        <Translate contentKey="introApp.examResult.home.title">Exam Results</Translate>
         <div className="d-flex justify-content-end">
           <Button className="mr-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="introApp.student.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="introApp.examResult.home.refreshListLabel">Refresh List</Translate>
           </Button>
         </div>
       </h2>
       <div className="table-responsive">
-        {studentList && studentList.length > 0 ? (
+        {examResultList && examResultList.length > 0 ? (
           <Table responsive>
             <thead>
               <tr>
-                <th className="hand" onClick={sort('full_name')}>
+                <th className="hand" onClick={sort('id')}>
                   <h6>Öğrenci İsmi</h6>
                 </th>
-                <th className="hand" onClick={sort('full_name')}>
+                <th className="hand" onClick={sort('score')}>
                   <h6>Kurs İsmi</h6>
                 </th>
-                <th className="hand" onClick={sort('full_name')}>
+                <th>
                   <h6>Kurs Puanı</h6>
                 </th>
-                <th className="hand" onClick={sort('full_name')}>
-                  <h6>Kurs Puanı</h6>
-                </th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
-                {
-                examResultList.map((exam, i) => (
-                  <tr key={`entity-${i}`} data-cy="entityTable">
-                  <td>{exam.student.full_name}</td>
-                  <td>{exam.course.name}</td>
-                  <td>{exam.score}</td>
-                  <td>{exam.student.full_name}</td>
+              {examResultList.map((examResult, i) => (
+                <tr key={`entity-${i}`} data-cy="entityTable">
+                  {/* <td>
+                    <Button tag={Link} to={`${match.url}/${examResult.id}`} color="link" size="sm">
+                      {examResult.id}
+                    </Button>
+                  </td> */}
+                  <td>{examResult.student? <Link to={`student/${examResult.student.id}`}>{examResult.student.full_name}</Link> : ''}</td>
+                  <td>{examResult.course ? <Link to={`course/${examResult.course.id}`}>{examResult.course.name}</Link> : ''}</td>
+                  <td>{examResult.score? <Link to={`course/${examResult.id}`}>{examResult.score}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
-                      <Button tag={Link} to={`${match.url}/${exam.student.id}`} color="info" size="sm" data-cy="entityDetailsButton">
+                      <Button tag={Link} to={`${match.url}/${examResult.id}`} color="info" size="sm" data-cy="entityDetailsButton">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.view">View</Translate>
@@ -129,23 +124,20 @@ function AllInfo(props: RouteComponentProps<{ url: string }>) {
                       </Button>
                     </div>
                   </td>
-                  </tr>
-              ))
-                
-              }
+                </tr>
+              ))}
             </tbody>
-            
           </Table>
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="introApp.student.home.notFound">No Students found</Translate>
+              <Translate contentKey="introApp.examResult.home.notFound">No Exam Results found</Translate>
             </div>
           )
         )}
       </div>
       {totalItems ? (
-        <div className={studentList && studentList.length > 0 ? '' : 'd-none'}>
+        <div className={examResultList && examResultList.length > 0 ? '' : 'd-none'}>
           <Row className="justify-content-center">
             <JhiItemCount page={paginationState.activePage} total={totalItems} itemsPerPage={paginationState.itemsPerPage} i18nEnabled />
           </Row>
