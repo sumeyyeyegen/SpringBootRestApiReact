@@ -62,7 +62,7 @@ class ExamResultResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static ExamResult createEntity(EntityManager em) {
-        ExamResult examResult = new ExamResult().student_id(DEFAULT_STUDENT_ID).score(DEFAULT_SCORE).course_id(DEFAULT_COURSE_ID);
+        ExamResult examResult = new ExamResult().score(DEFAULT_SCORE);
         return examResult;
     }
 
@@ -73,7 +73,7 @@ class ExamResultResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static ExamResult createUpdatedEntity(EntityManager em) {
-        ExamResult examResult = new ExamResult().student_id(UPDATED_STUDENT_ID).score(UPDATED_SCORE).course_id(UPDATED_COURSE_ID);
+        ExamResult examResult = new ExamResult().score(UPDATED_SCORE);
         return examResult;
     }
 
