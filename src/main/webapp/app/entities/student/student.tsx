@@ -5,11 +5,11 @@ import { Translate, getSortState, JhiPagination, JhiItemCount } from 'react-jhip
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { getEntities } from './student.reducer';
-import { IStudent } from '../../../app/shared/model/student.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from '../../../app/config/constants';
-import { ASC, DESC, ITEMS_PER_PAGE, SORT } from '../../../app/shared/util/pagination.constants';
-import { overridePaginationStateWithQueryParams } from '../../../app/shared/util/entity-utils';
-import { useAppDispatch, useAppSelector } from '../../../app/config/store';
+import { IStudent } from '../../shared/model/student.model';
+import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from '../../config/constants';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from '../../shared/util/pagination.constants';
+import { overridePaginationStateWithQueryParams } from '../../shared/util/entity-utils';
+import { useAppDispatch, useAppSelector } from '../../config/store';
 
 export const Student = (props: RouteComponentProps<{ url: string }>) => {
   const dispatch = useAppDispatch();
