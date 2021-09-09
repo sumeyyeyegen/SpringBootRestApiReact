@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import org.jhipster.intro.domain.Course;
+import org.jhipster.intro.domain.ExamResult;
 import org.jhipster.intro.repository.CourseRepository;
 import org.jhipster.intro.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
@@ -60,6 +61,13 @@ public class CourseResource {
         }
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    @PostMapping("/courses/add")
+    public Course add(@RequestBody Course course) {
+    	//service kısmında oluşturulan add fonksiyonu.
+    	Course res = courseRepository.save(course);
+        return res;
     }
 
     /**
